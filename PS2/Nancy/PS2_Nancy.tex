@@ -1,0 +1,187 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{minted}
+\usepackage{threeparttable}
+\usepackage{natbib}
+\usepackage{geometry}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in}
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{}
+\rfoot{\footnotesize\textsl{Page \thepage\ of \pageref{LastPage}}}
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}
+\usepackage[format=hang,font=normalsize,labelfont=bf]{caption}
+\usepackage{listings}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{ForestGreen},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{setspace}
+\usepackage{float,color}
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\hypersetup{colorlinks,linkcolor={red},urlcolor={blue}, citecolor = {blue}}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{derivation}{Derivation} % Number derivations on their own
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}{Proposition} % Number propositions on their own
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+%\numberwithin{equation}{section}
+\bibliographystyle{aer}
+\newcommand\ve{\varepsilon}
+\newcommand\boldline{\arrayrulewidth{1pt}\hline}
+%++++++++++++++++++++++++++++++++++++++++
+
+
+\begin{document}
+
+
+\noindent\textbf{Question 2}\\
+Notice that the utility function might not be strictly increasing. Therefore, we need to modify the notion of feasible allocation.An allocation $(x^i)_{i=1}^{m}$ is feasible if $$\sum _ { i = 1 } ^ { m } x ^ { i } \leq \sum_{i=1}^{m} e^i $$\\
+(Sufficiency) Suppose  $( \hat { x } ^ { i } ) _ { i = 1 } ^ { m }$ is the solution to the maximization problem. From the second condition we can conclude that this is a feasible allocation. By way of contradiction, suppose that this is not Pareto efficient. Then there must exist some other allocation $(y^i)_{i=1}^{m}$ such that $u^j\left(y^i\right) \geq u^j\left(\hat{x}^i\right) $ for all $i$ with at least one inequality. If that is the case, we also have   $\sum_{i=1}^{m} u^j\left(y^i\right) \geq \sum_{i=1}^{m} u^j\left(\hat{x}^i\right) $ This contradicts with the assumption that $(x^i)_{i=1}^{m}$ solves the maximization problem.\\
+(Necessity) Consider an exchange economy $\mathcal { E } = \left( u _ { i }  , e ^ { i } \right){ i \in \mathcal { I } }$. $\left( \hat { x } ^ { i } \right) _ { i = 1 } ^ { m }$ is a Pareto efficient allocation. By way of contradiction, suppose $( \hat { x } ^ { i } ) _ { i = 1 } ^ { m }$ not the solution to the maximization problem. It implies that there exists another feasible allocation $( \tilde { x } ^ { i } ) _ { i = 1 } ^ { m }$ such that $\sum _ { i = 1 } ^ { m } u ^ { i } \left( \tilde { x } ^ { i } \right) > \sum _ { i = 1 } ^ { m } u ^ { i } \left( \hat { x } ^ { i } \right)$. Therefore, there must be at least one j such that $u^j\left(\tilde{x}^i\right) > u^j\left(\hat{x}^i\right) $ This violates the definition of Pareto efficient allocation.\qed\\
+\\
+\vspace{5mm}
+\noindent\textbf{Question 4}\\
+Claim: the equilibrium satisfies
+\begin{equation}
+    \begin{aligned} 
+    p_1 &= p_2 = p_3= p^*\\
+    x _ { 1 } ^ { 1 } & = x _ { 2 } ^ { 1 } = \frac { 1 } { 2 } ,\quad x _ { 3 } ^ { 1 } = 0 \\ 
+    x _ { 2 } ^ { 2 } & = x _ { 3 } ^ { 2 } = \frac { 1 } { 2 } ,\quad x _ { 1 } ^ { 2 } = 0 \\
+    x _ { 1 } ^ { 3 } & = x _ { 3 } ^ { 3 } = \frac { 1 } { 2 } ,\quad x _ { 2 } ^ { 3 } = 0 \end{aligned}
+\end{equation}
+With the utility function given in the question, the consumer's optimal demand is to consume the same amount of goods that she values, i.e.,
+$$
+x _ { 1 } ^ { 1 * } = x _ { 2 } ^ { 1 * } , x _ { 2 } ^ { 2 * } = x _ { 3 } ^ { 2 * } , x _ { 1 } ^ { 3 * } = x _ { 3 } ^ { 3 * }
+$$
+The budget constraints yield
+\begin{equation}
+ \begin{aligned} p _ { 1 } x _ { 1 } ^ { 1 * } + p _ { 2 } x _ { 2 } ^ { 1 * } & = p _ { 1 } \\ p _ { 2 } x _ { 2 } ^ { 2 * } + p _ { 3 } x _ { 3 } ^ { 2 * } & = p _ { 2 } \\ p _ { 1 } x _ { 1 } ^ { 3 * } + p _ { 3 } x _ { 3 } ^ { 3 * } & = p _ { 3 } \end{aligned}   
+\end{equation}
+This gives us
+\begin{equation}\label{eq3}
+\begin{aligned}
+    x_1^{1*} = x_2^{1*} &= \frac{p_1}{p_1 + p_2}\\
+    x_2^{2*} = x_3^{2*} &= \frac{p_2}{p_2 + p_3}\\
+    x_1^{3*} = x_3^{3*} &= \frac{p_3}{p_1 + p_3}
+    \end{aligned}
+\end{equation}
+Also, market clearing requires that
+\begin{equation}\label{eq4}
+\begin{aligned} { x _ { 1 } ^ { 1 * } + x _ { 1 } ^ { 3 * } = 1 } \\
+{ x _ { 2 } ^ { 2 * } + x _ { 1 } ^ { 1 * } = 1 } \\
+{ x _ { 2 } ^ { 2 * } + x _ { 1 } ^ { 3 * } = 1 } 
+\end{aligned}
+\end{equation}
+If we normalise $p_1$ tp $p^* > 0$ and solve for \ref{eq3} and \ref{eq4}, we will have the result above.
+\vspace{5mm}
+
+\noindent\textbf{Question 5.3}\\
+Recall that function $u$ is strongly increasing means that $$\forall x, y, x \geq y,  x \neq y  \Rightarrow u^i(x) > u^i(y)$$
+Also recall that excess demand for good k is defined as 
+$$
+z_k(p) = \sum_{i=1}^m x_k^i - \sum_{i=1}^{m} e_k^i
+$$
+Suppose the price of one good s is non-positive. The consumer's budget constraint is \begin{equation}
+    \sum_{k=1}^{s-1} p_{k}x_{k} + p_{s}x_{s} + \sum_{k=s+1}^{n} p_{k}x_{k} \leq \sum_{k=1}^{s-1} p_{k}e_{k} + p_{s}e_{s} + \sum_{k=s+1}^{n} p_{k}e_{k}
+\end{equation}
+Suppose $p_s = 0$. The consumer's budget constraint would hold for any $x_s \in \mathbb{R}_{+}^{n}$\\
+Also, the utility function is strongly increasing. We could strictly increase the consumer's utility by replacing the original $x_s$ with some unbounded positive demand. The proof is the same is $p_s \leq 0$. \qed
+
+\vspace{5mm}
+
+\noindent\textbf{Question 5.14 (a)}\\
+Recall that Theorem 5.5 requires Assumption 5.1:\\
+\noindent\textbf{Assumption 5.1} Each utility function $u^i$ is continuous, strongly increasing and strictly quasi-concave.\\
+However, Cobb-Douglas utility function is not strongly increasing. Consider two bundles $x = (1, 0, 0, ..., 0)$, $y = (1, 1, 1, ..., 1, 0)$ $x \geq y, x \neq y, but u^i(x) = u^i(y)$. Therefore, we cannot apply Theorem 5.5 to conclude that this economy possesses a Walrasian economy.\\
+\\
+\noindent\textbf{Question 5.14 (b)}\\
+\noindent\textbf{Theorem 5.3} Suppose $\mathbf { z } : \mathbb { R } _ { + + } ^ { n } \rightarrow \mathbb { R } ^ { n }$ satisfies the following three conditions:\\
+\indent 1. z($\cdot$) is continuous on $\mathbb{R}_{++}^{n}$;\\
+\indent 2. $p \cdot z(p) = 0$ for all $p \cdot 0$;\\
+\indent 3. If ${p^m}$ is a sequence of price vectors in $\mathbb{R}_{++}^{n}$ converging to $\overline{p} = 0$, and $\overline{p}_k = 0$ for some good k, then for some good k'  with $\overline{p}_{k'} = 0$, the associated sequence of
+excess demands in the market for good k', ${z_{k'}(p^m)}$, is unbounded above. \\
+Then there is a price vector $p^∗ \gg 0$ such that $z(p^∗) = 0$.\\
+(1) The consumer's problem is:\\
+\begin{equation}
+    \begin{aligned}
+    \max _ { \mathbf { x } \in \mathbb { R } _ { + } ^ { n } } \quad & x _ { 1 } ^ { \alpha _ { 1 } } x _ { 2 } ^ { \alpha _ { 2 } } \cdots x _ { n } ^ { \alpha _ { n } } \quad \\
+    \text { s.t. } \quad &\sum _ { k = 1 } ^ { n } p _ { k } x _ { k } \leq \sum _ { k = 1 } ^ { n } p _ { k } e _ { k }
+    \end{aligned}
+\end{equation}
+To solve the maximization problem, write the Lagrangian:\\
+$$\mathbb{L} = u^i(x) - \lambda_i (px - pe)$$
+The first order condition is \\
+\begin{equation*}
+  \begin{aligned}
+  \frac { \alpha _ { k }^i  u^i (x)} { x _ { k }^i} & = \lambda_i p _ { k },\quad \forall k\\
+\Rightarrow \frac{p_k}{p_j}&= \frac{\alpha_k^i}{\alpha_j^i}\frac{x_j^i}{x_k^i}, \quad \forall k, j\\
+\Rightarrow x_k^i &= \frac{\alpha_k^i}{\alpha_j^i}\frac{p_j}{p_k}x_j^i\\
+\Rightarrow \sum_{k=1}^{n} p_k x_k^i = &  \sum_{k=1}^{n}\frac{\alpha_k^i}{\alpha_j^i}p_jx_j^i = \sum_{k=1}^{n} p_k e_k^i
+\\
+ \Rightarrow x_k^i &= \frac{\alpha_k^i}{p_k}\left(\sum _ { j = 1 } ^ { n } p _ { j } e _ { j }\right)
+   \end{aligned}
+ \end{equation*}
+The last equation follows from $\sum _ { k = 1 } ^ { n } \alpha _ { k } ^ { i } = 1$.\\
+The excess demand function is 
+\begin{equation}\label{eq7}
+    \begin{aligned}
+    z _ { k } ( \mathbf { p } ) & : = \sum _ { i \in \mathcal { I } } x _ { k } ^ { i } - \sum _ { i \in \mathcal { I } } e _ { k } ^ { i } \\ 
+    & = \sum _ { i \in \mathcal { I } } \frac{\alpha _ { k } ^ { i }}{p_k} \left(\sum _ { j = 1 } ^ { n } p _ { j } e _ { j }\right) - \sum _ { i \in \mathcal { I } } e _ { k } ^ { i } 
+    \end{aligned}
+\end{equation}
+Notice that $x_j^i$ are continuous, so the aggregate excess demand function is also continuous.\\
+(2) Using \ref{eq7}, we have
+\begin{equation}
+\begin{aligned}
+\mathbf { p } \cdot \mathbf { z } ( \mathbf { p } ) &= \sum_{k=1}^{n} \left\{\sum_{i\in \mathcal{I}}\alpha_k \left(\sum _ { j = 1 } ^ { n } p _ {j} e _ { j }\right) - p_k e _ { k } ^ { i } \right\}\\
+&= \sum_{i\in \mathcal{I}}\sum_{k=1}^{n} \left\{\alpha_k \left(\sum _ { j = 1 } ^ { n } p _ { j } e _ { j }\right) - p_k e _ { k } ^ { i } \right\}\\
+&= \sum_{i\in \mathcal{I}}\left(\sum_{k=1}^{n} \alpha_k \sum _ { j = 1 } ^ { n } p _ { j } e _ { j }\right) - \sum_{i\in \mathcal{I}}\sum_{k=1}^{n} p_k e _ { k } ^ { i }\\
+& = \sum_{i\in \mathcal{I}}\left(\sum_{k=1}^{n}p_k e_k^i - \sum_{k=1}^{n} p_k e _ { k } ^ { i }\right)\\
+&= 0
+\end{aligned}
+\end{equation}
+Condition 2 is satisfied.\\
+(3) Suppose $\tilde{\mathbf{p}}$ is the price vector that satisfies  ${\tilde{\mathbf{p}}} \rightarrow \overline{p} \neq 0$ and $\tilde{p}_k = 0$ for some k.\\
+From \ref{eq7} we know that the excess demand for good k is related to $\frac{\sum_{j=1}^{n}\tilde{p}_j e_j}{\tilde{p}_k}$. $\sum_{j=1}^{n}\tilde{p}_j e_j$ is strictly positive, while $\tilde{p}_k \rightarrow 0$.\\
+Therefore, the demand is unbounded from above. Correspondingly, ${z_k(\tilde{p}}$ is also unbounded from above. Condition 3 is satisfied. We could apply Theorem 5.3 to conclude that a Walrasian equilibrium exists. \qed\\
+
+
+\end{document}
